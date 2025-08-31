@@ -13,3 +13,5 @@ Um aplicativo de lista de tarefas simples e intuitivo para ajudar você a organi
 -   **Armazenamento Local:** Todas as suas tarefas são salvas no armazenamento local do navegador, garantindo que elas permaneçam lá mesmo após você fechar a página.
 
 Este projeto foi construído usando HTML, CSS e JavaScript puro, focando na simplicidade e no desempenho.
+
+Link: https://lucasspagnoli.github.io/toDoList/
