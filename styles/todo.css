@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2,
+h1,
+p {
+    cursor: default;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("../imgs/1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 98vw;
+}
+
+.titulo {
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+    margin: 1.5rem 0 0 2rem;
+    text-shadow: -3px 3px 2px rgba(0, 0, 0, 0.392);
+    position: absolute;
+    letter-spacing: 1rem;
+}
+
+main {
+    display: flex;
+}
+
+#fundo {
+    background-color: rgba(0, 0, 0, 0.382);
+    height: 100vh;
+    width: 98vw;
+}
+
+.todo-container {
+    height: 34rem;
+    width: 27rem;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    translate: -50% -50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.new-task-container {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+    height: 7.5rem;
+    width: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(40, 40, 40, 0.3), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(29, 29, 29, 0.3), transparent 60%),
+        linear-gradient(135deg, #1b1b1b 0%, #3f3f3f 50%, #1b1b1b 100%);
+    border-radius: 1rem 1rem 0 0;
+    flex-wrap: wrap;
+    box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.359);
+}
+
+.todo-titulo {
+    font-family: "Montserrat";
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.input {
+    margin: 1.5rem 0 3rem 0;
+    width: 65%;
+    height: 2rem;
+    background-color: rgb(141, 141, 141);
+    text-indent: 0.2rem;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: rgb(226, 226, 226);
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-date {
+    width: 12%;
+    font-size: 1rem;
+    border-radius: 0.2rem 0 0 0.2rem;
+}
+.input-time {
+    width: 12%;
+    font-size: 1rem;
+}
+
+.input-task {
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+
+.add-btn {
+    height: 2rem;
+    width: 10%;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 0 0.2rem 0.2rem 0;
+    background-color: rgb(141, 141, 141);
+    ;
+    color: blue;
+    position: absolute;
+    top: 8.7%;
+    left: 84.5%;
+    cursor: pointer;
+    display: none;
+}
+
+.add-btn:hover {
+    background-image: linear-gradient(135deg, rgb(0, 0, 166) -30%, rgb(51, 51, 255), rgb(0, 0, 166) 130%);
+    color: rgb(226, 226, 226);
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.tasks-container {
+    background: radial-gradient(circle at 20% 30%, rgba(120, 110, 220, 0.3), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(110, 100, 220, 0.3), transparent 50%),
+        linear-gradient(135deg, #1a0a4d 0%, #20105c 50%, #120a3a 100%);
+    width: 100%;
+    margin-top: 2rem;
+    box-shadow: -4px 5px 10px rgba(0, 0, 0, 0.359);
+    max-height: 63%;
+    height: 63%;
+    border-radius: 0 0 0.3rem 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.tasks-list-container {
+    overflow-y: auto;
+    max-height: 65%;
+    height: 65%;
+    /* Pra firefox:
+    scrollbar-width: thin;
+    scrollbar-color: #382A7C black;
+    */
+}
+
+.tasks-list-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Estiliza o fundo (a pista por onde a barra corre) */
+.tasks-list-container::-webkit-scrollbar-track {
+    background: black;
+}
+
+/* Estiliza a barra de rolagem */
+.tasks-list-container::-webkit-scrollbar-thumb {
+    background-color: #382A7C;
+    border-radius: 2px;
+    border: 2px solid black;
+}
+
+/* Efeito visual ao passar o mouse sobre a barra */
+.tasks-list-container::-webkit-scrollbar-thumb:hover {
+    background-color: #1565c0;
+}
+
+.task-titulo {
+    margin: 1rem 0 0 1.5rem;
+}
+
+.task-list {
+    margin: 1rem auto 0.5rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item {
+    height: 3rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #beb6ea;
+    animation: newTask 0.3s;
+}
+
+.task-checkbox {
+    font-size: 1.5rem;
+    color: #beb6ea;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.task-checkbox:hover {
+    transform: scale(1.05);
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.del-task-btn {
+    color: red;
+    font-family: "Montserrat";
+    font-size: 2rem;
+    margin-left: 6rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.del-task-btn:hover {
+    text-shadow: -3px 5px 4px black;
+    outline: none;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 2.03rem;
+}
+
+
+.task-text {
+    padding: 0.2rem 0 0 0.5rem;
+    color: #beb6ea;
+    font-size: 1rem;
+    width: 100%;
+    font-family: "Montserrat";
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
+.tasks-details {
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    margin-bottom: 0.6rem;
+}
+
+.task-type-btn {
+    background-color: transparent;
+    border: none;
+    font-family: "Montserrat";
+    color: white;
+    font-size: 0.8rem;
+}
+
+.tasks-quant {
+    font-family: "Montserrat";
+    color: white;
+    font-size: 0.8rem;
+}
+
+.all-type {
+    margin-left: 4rem;
+}
+
+.completed-type {
+    margin-right: 5rem;
+}
+
+.task-type-btn:hover {
+    color: rgb(176, 176, 176);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@keyframes newTask {
+    from {
+        translate: 0 -50%;
+        opacity: 30%;
+    }
+
+    to {
+        translate: 0 0%;
+        opacity: 100%;
+    }
+}
+
+@keyframes delTask {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-700px);
+    }
+}
+
+@keyframes completeTask {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(700px);
+    }
+
+}

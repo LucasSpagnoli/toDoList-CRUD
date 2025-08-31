@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="../styles/todo.css">
+    <script type="module" src="../scripts/btnsEvent.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="titulo">TO DO</h1>
+    </header>
+    <main>
+        <!-- fundo -->
+        <div id="fundo">
+        </div>
+        <article class="todo-container">
+            <section class="new-task-container">
+                <h2 class="todo-titulo">New Task</h2>
+
+                <input class="input input-date" type="text" placeholder="dd/mm" maxlength="5">
+                
+                <input class="input input-time" type="text" placeholder="hh:mm" maxlength="5">
+
+                <input class="input input-task" type="text">
+                <button class="add-btn">+</button>
+            </section>
+            <section class="tasks-container">
+                <h2 class="todo-titulo task-titulo">Tasks</h2>
+                <section class="tasks-list-container">
+                    <ul class="task-list">
+                    </ul>
+                </section>
+                <section class="tasks-details">
+                    <p class="tasks-quant">No tasks</p>
+                    <button class="task-type-btn all-type">All</button>
+                    <button class="task-type-btn active-type">Active</button>
+                    <button class="task-type-btn completed-type">Completed</button>
+                    <button class="task-type-btn clear-btn">Clear</button>
+                </section>
+            </section>
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

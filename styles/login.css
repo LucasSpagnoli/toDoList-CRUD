@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("../imgs/1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background: radial-gradient(circle at 20% 30%, rgba(85, 85, 85, 0.3), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(71, 71, 71, 0.3), transparent 60%),
+        linear-gradient(135deg, #0f0f0f 0%, #212121 50%, #2b2b2b 100%);
+    height: 27rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.7rem;
+    position: relative;
+    justify-content: center;
+}
+
+.login-container::after,
+.login-container::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, white);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 0.7rem;
+    padding: 2px;
+    animation: spin 5s linear infinite;
+}
+
+.login-container::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: "Montserrat";
+    width: 13rem;
+}
+
+.login-titulo {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4rem 0 3rem 0;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.input-text {
+    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.login-input {
+    margin-bottom: 2rem;
+    height: 1.4rem;
+    border-radius: 0.4rem;
+    background-color: gray;
+    text-indent: 2px;
+    font-family: "Montserrat";
+}
+
+.login-input:focus {
+    background-color: lightgray;
+    transition: 0.2s ease;
+    outline: none;
+    border-radius: 0.2rem;
+}
+
+.btn-login {
+    background-color: rgba(0, 0, 0, 0.224);
+    color: white;
+    font-size: 1rem;
+    height: 2rem;
+    width: 6rem;
+    margin-top: 1.2rem;
+    border-radius: 1rem;
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: white;
+    border: black;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
