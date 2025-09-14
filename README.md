@@ -14,4 +14,4 @@ Um aplicativo de lista de tarefas simples e intuitivo para ajudar você a organi
 
 Este projeto foi construído usando HTML, CSS e JavaScript puro, focando na simplicidade e no desempenho.
 
-Link: https://lucasspagnoli.github.io/toDoList/
+[Link](https://lucasspagnoli.github.io/toDoList-CRUD/)
